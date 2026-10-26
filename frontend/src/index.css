@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#0B0F17] text-slate-100 font-sans antialiased overflow-x-hidden;
+  }
+}
+
+/* Custom Scrollbar for Emergency Dashboard */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0F17;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00F0FF;
+}
+
+/* Leaflet Map Custom Dark Theme Overrides */
+.leaflet-container {
+  background: #090D14 !important;
+  font-family: inherit;
+}
+.leaflet-tile {
+  filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3);
+}
+.leaflet-popup-content-wrapper {
+  background: #121824 !important;
+  color: #F8FAFC !important;
+  border: 1px solid #1E293B;
+  border-radius: 8px;
+}
+.leaflet-popup-tip {
+  background: #121824 !important;
+}
+
+/* Tactical Pulse Animations */
+.animate-radar-sweep {
+  animation: radarSweep 4s linear infinite;
+}
+@keyframes radarSweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
